@@ -29,4 +29,6 @@ cd Blackjack
 
 **Example:**
 ```bash
-./blackjack-trainer 8 1000  # 8 decks, $1000 starting bet
+./blackjack-trainer         # 6 decks, $1000 starting bet
+./blackjack-trainer 8       # 8 decks, $1000 starting bet
+./blackjack-trainer 4 500   # 4 decks, $500 starting bet
