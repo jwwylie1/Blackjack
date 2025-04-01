@@ -453,52 +453,6 @@ std::string Game::checkBlackjack() {
     else return "none";
 }
 
-/* void Game::promptUser() {
-    if (player.isSplittable()) {
-        std::cout << "\n'hit', 'stand', 'split', or 'double'?  ";
-    } else {
-        std::cout << "\n'hit', 'stand', or 'double'?  ";
-    }
-
-    while (!playerDone) {
-        std::string decision;
-        std::cin >> decision;
-
-        if (decision == "hit") {
-            player.addCard(deck.next());
-            player.printPlayer(window);
-            dealer.printDealer(false);
-
-            if (player.total() == 21) { // player hits 21
-                playerDone = true;
-            } else if (player.total() > 21) {// player goes over (busts)
-                playerDone = true;
-                playerBust = true;
-                finishHand();
-            }
-        } else if (decision == "stand") {
-            player.printPlayer(window);
-            playerDone = true;
-            finishHand();
-        } else if (decision == "double") {
-            player.addCard(deck.next());
-            player.printPlayer(window);
-
-            if (player.total() > 21) {// player goes over (busts)
-                playerBust = true;
-            }
-
-            playerDone = true;
-            bet *= 2;
-            finishHand();
-        } else if (decision == "split") {
-
-        } else {
-            std::cout << "Error! Pick a valid option.\n";
-        }
-    }
-} */
-
 void Game::hit(bool doubled) {
     if (doubled) {
         bet *= 2;

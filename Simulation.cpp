@@ -22,8 +22,6 @@ void Simulation::reset() {
 }
 
 void Simulation::simulate() {
-    std::cout << "DECK: " << deck.size()-place << '\n';
-
     for (int i=0; i<iterations; ++i) {
         // Random number
         reset();
@@ -31,12 +29,11 @@ void Simulation::simulate() {
 
     }
 
-    std::cout << results["blackjacks"] << " blackjacks, " << results["wins"] << " wins, " << results["pushes"] << " pushes, "
-        << results["surrenders"] << " surrenders, " << results["losses"] << " losses."; 
+    /* std::cout << results["blackjacks"] << " blackjacks, " << results["wins"] << " wins, " << results["pushes"] << " pushes, "
+        << results["surrenders"] << " surrenders, " << results["losses"] << " losses.";  */
 
     ratio = (results["blackjacks"]*1.5 + results["wins"] - 0.5*results["surrenders"] - results["losses"]) / iterations;
 
-    //std::cout << "Ratio: " << ratio << '\n';
     simRatioText.setString("Your edge: " + std::to_string(ratio));
 
 }
@@ -105,41 +102,23 @@ void Simulation::finishHand() {
 
     if (playerBJ) { // player blackjack
         results["blackjacks"] += 1.5;
-        //std::cout << "BLACKJACK: ";
     } else if (dealerBJ) {
         results["losses"] += (1 + dbl);
-        //std::cout << "LOSS: ";
     } else if (playerBust) {
         results["losses"] += (1 + dbl);
-        //std::cout << "LOSS: ";
     } else if (dealerBust) {
         results["wins"] += (1 + dbl);
-        //std::cout << "WIN: ";
     } else if (decision == "split") {
         ++results["pushes"];
-        //std::cout << "PUSH: ";
     } else if (decision == "surrender") {
         results["surrenders"] += 1;
-        //std::cout << "SURRENDER: ";
     } else {
         if (player.total() > dealer.total()) {
             results["wins"] += (1 + dbl);
-            //std::cout << "WIN: ";
         } else if (player.total() < dealer.total()) {
             results["losses"] += (1 + dbl);
-            //std::cout << "LOSS: ";
         } else {
             ++results["pushes"];
-            //std::cout << "PUSH: ";
         }
     }
-
-    /* for (int i=0; i<player.size(); ++i) {
-        std::cout << player[i] << ' ';
-    } 
-    std::cout << "(" << player.total() << ") | (" << dealer.total() << ") ";
-    for (int i=0; i<dealer.size(); ++i) {
-        std::cout << dealer[i] << ' ';
-    }
-    std::cout << '\n'; */
 }

@@ -21,11 +21,6 @@ void Deck::shuffle() {
     std::mt19937 g(rd());   // Mersenne Twister engine
     std::shuffle(cards.begin(), cards.end(), g);
     place = 0;
-    std::cout << "shuffled";
-    /* for (int i : cards) {
-        std::cout << i << " ";
-    }
-    std::cout << '\n'; */
 }
 
 Card Deck::next() {

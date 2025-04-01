@@ -13,12 +13,9 @@
 ### Prerequisites  
 - C++17 compiler (GCC/Clang/MSVC)  
 - [SFML 2.5+](https://www.sfml-dev.org/download.php)  
-- CMake (recommended)  
 
 ### Steps  
 ```bash
-git clone https://github.com/yourusername/blackjack-trainer.git  
-cd blackjack-trainer  
-mkdir build && cd build  
-cmake .. && make  
-./BlackjackTrainer  
+git clone https://github.com/jwwylie1/Blackjack.git  
+cd Blackjack
+./blackjack-trainer
