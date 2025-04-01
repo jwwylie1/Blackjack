@@ -18,4 +18,15 @@
 ```bash
 git clone https://github.com/jwwylie1/Blackjack.git  
 cd Blackjack
-./blackjack-trainer
+./blackjack-trainer \[number_of_decks\] \[initial_bet\]
+```
+### ⚙️ Command Line Arguments
+
+| Argument          | Type   | Valid Range  | Default | Description                     |
+|-------------------|--------|--------------|---------|---------------------------------|
+| `number_of_decks` | int    | 1-10         | 6       | Number of decks in the shoe      |
+| `initial_bet`     | int    | 100-10000    | 1000    | Starting bankroll (in $)        |
+
+**Example:**
+```bash
+./blackjack-trainer 8 1000  # 8 decks, $1000 starting bet
