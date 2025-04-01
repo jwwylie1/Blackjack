@@ -8,17 +8,20 @@
 
 int main(int argc, char* argv[]) {
 
-    int num_decks_in;
+    int num_decks_in = 6;
     int initial_bet = 1000;
 
-    if (argc != 2 && argc != 3) {
+    if (argc > 3) {
         std::cout << "RUN FAILED: ./sfml-app [NUMBER OF DECKS] [INITIAL BET]";
         return 1;
     }
 
-    if (std::stoi(argv[1]) > 10 || std::stoi(argv[1]) < 1) {
-        std::cout << "RUN FAILED: Number of decks must be between 1 and 10";
-        return 1;
+    if (argc > 1) {
+        if (std::stoi(argv[1]) > 10 || std::stoi(argv[1]) < 1) {
+            std::cout << "RUN FAILED: Number of decks must be between 1 and 10";
+            return 1;
+        }
+        num_decks_in = std::stoi(argv[1]);
     }
 
     if (argc == 3) {
@@ -28,7 +31,6 @@ int main(int argc, char* argv[]) {
         }
         initial_bet = std::stoi(argv[2]);
     }
-    num_decks_in = std::stoi(argv[1]);
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(1500, 900), "Card Counting Simulator");

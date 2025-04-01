@@ -25,7 +25,7 @@ cd Blackjack
 | Argument          | Type   | Valid Range  | Default | Description                     |
 |-------------------|--------|--------------|---------|---------------------------------|
 | `number_of_decks` | int    | 1-10         | 6       | Number of decks in the shoe      |
-| `initial_bet`     | int    | 100-10000    | 1000    | Starting bankroll (in $)        |
+| `initial_bet`     | int    | 100-10000    | 1000    | Starting bet       |
 
 **Example:**
 ```bash
