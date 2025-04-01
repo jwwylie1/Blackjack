@@ -18,7 +18,7 @@
 ```bash
 git clone https://github.com/jwwylie1/Blackjack.git  
 cd Blackjack
-./blackjack-trainer \[number_of_decks\] \[initial_bet\]
+./blackjack-trainer [number_of_decks] [initial_bet]
 ```
 ### ⚙️ Command Line Arguments
 
