@@ -28,6 +28,11 @@ or
 ```bash
 ./blackjack-trainer
 ```
+### 🍎 macOS
+```bash
+make
+make run
+```
 
 ### ⚙️ Command Line Arguments
 
