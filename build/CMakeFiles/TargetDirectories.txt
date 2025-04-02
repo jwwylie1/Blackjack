@@ -1,3 +1,0 @@
-/home/jwwylie/blackjack/build/CMakeFiles/blackjack-trainer.dir
-/home/jwwylie/blackjack/build/CMakeFiles/edit_cache.dir
-/home/jwwylie/blackjack/build/CMakeFiles/rebuild_cache.dir
