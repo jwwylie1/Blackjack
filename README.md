@@ -14,12 +14,21 @@
 - C++17 compiler (GCC/Clang/MSVC)  
 - [SFML 2.5+](https://www.sfml-dev.org/download.php)  
 
-### Steps  
+### Steps - All Platforms
 ```bash
 git clone https://github.com/jwwylie1/Blackjack.git  
 cd Blackjack
-./blackjack-trainer [number_of_decks] [initial_bet]
 ```
+### 🐧 Linux (Debian/Ubuntu)
+```bash
+make
+make run
+```
+or
+```bash
+./blackjack-trainer
+```
+
 ### ⚙️ Command Line Arguments
 
 | Argument          | Type   | Valid Range  | Default | Description                     |
