@@ -1,26 +1,29 @@
-# Compiler and flags
+# Detect OS
+ifeq ($(OS),Windows_NT)
+    TARGET = blackjack-trainer.exe
+    SFML_LIBS = -lsfml-graphics -lsfml-window -lsfml-system
+    CLEAN_CMD = del /f $(TARGET)
+else
+    TARGET = blackjack-trainer
+    SFML_LIBS = -lsfml-graphics -lsfml-window -lsfml-system
+    CLEAN_CMD = rm -f $(TARGET)
+endif
+
+# Compiler settings
 CXX = g++
 CXXFLAGS = -std=c++17 -w
-LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
+LDFLAGS = $(SFML_LIBS)
 
-# Target executable
-TARGET = blackjack-trainer
-
-# Source files
-SRCS = main.cpp
-
-# Default build rule
+# Build rules
 all: $(TARGET)
 
-$(TARGET): $(SRCS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDFLAGS)
+$(TARGET): main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp -o $(TARGET) $(LDFLAGS)
 
-# Clean compiled files
-clean:
-	rm -f $(TARGET)
-
-# Run the program
 run: $(TARGET)
 	./$(TARGET)
+
+clean:
+	$(CLEAN_CMD)
 
 .PHONY: all clean run
