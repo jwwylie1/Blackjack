@@ -20,14 +20,14 @@ git clone https://github.com/jwwylie1/Blackjack.git
 cd Blackjack
 ```
 ### 🐧 Linux (Debian/Ubuntu)
-To recompile:
+To recompile and run with no command line arguments:
 ```bash
 make
 make run
 ```
 or to run:
 ```bash
-./blackjack-trainer
+./blackjack-trainer [number_of_decks] [initial_bet]
 ```
 ### 🍎 macOS
 ```bash

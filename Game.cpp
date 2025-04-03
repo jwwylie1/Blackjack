@@ -598,11 +598,11 @@ void Game::showStats() {
         winningsText.setString("Winnings: -$" + std::to_string(winnings*-1));
     else
         winningsText.setString("Winnings: $" + std::to_string(winnings));
-    updateArea(window, winningsText);
+    updateArea(window, winningsText, 350);
 
     int roundedTrueCount = std::round(trueCount);
     countText.setString("Running count: " + std::to_string(runningCount) + "\nTrue count: " + std::to_string(roundedTrueCount));
-    updateCounting(window, countText, simRatioText, true);
+    updateCounting(window, countText, simRatioText, showingHelp);
 
     if (numCards-cardsUsed < 10) {
         cardsUsed = 0;
