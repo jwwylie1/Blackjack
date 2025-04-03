@@ -20,11 +20,12 @@ git clone https://github.com/jwwylie1/Blackjack.git
 cd Blackjack
 ```
 ### 🐧 Linux (Debian/Ubuntu)
+To recompile:
 ```bash
 make
 make run
 ```
-or
+or to run:
 ```bash
 ./blackjack-trainer
 ```
